@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompter CQ</title>
+
+    <!-- tailwind cdn links -->
+    <script src="https://cdn.tailwindcss.com"></script>
+        
+    <!-- MathJax cdn -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+      
+  </head>
+  <body class="dark:bg-gray-800">
+    
+
+
+
+    <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <div class="px-2 py-2 lg:px-2 lg:pl-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center justify-start rtl:justify-end">
+              <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                  <span class="sr-only">Open sidebar</span>
+                  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+                  </svg>
+               </button>
+              <a href="#" class="flex ms-2 md:me-24">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
+                <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">NexBit</span>
+              </a>
+            </div>
+            <div class="flex items-center">
+                <div class="flex items-center ms-3">
+                  <div>
+                    <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                      <span class="sr-only">Open user menu</span>
+                      <img class="w-8 h-8 rounded-full" id="userImg" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                    </button>
+                  </div>
+                  <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
+                    <div class="px-4 py-3" role="none">
+                      <p id="userName" class="text-sm text-gray-900 dark:text-white" role="none">
+                        Neil Sims
+                      </p>
+                      <p id="userMail" class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                        neil.sims@flowbite.com
+                      </p>
+                    </div>
+                    <ul class="py-1" role="none">
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Profile</a>
+                      </li>
+                      
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </nav>
+      
+      <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+         <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+            <ul class="space-y-2 font-medium">
+               <li>
+                  <a href="../dashboard/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                     <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none" viewBox="0 0 20 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M1 7h18M4 4h.01M7 4h.01M10 4h.01M3 17h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"/>
+                      </svg>
+                     <span class="ms-3">Dashboard</span>
+                  </a>
+               </li>
+               <li>
+                <a href="../examprobe/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                   <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                     <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10ZM17 13h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2Z"/>
+                   </svg>
+                   <span class="ms-3">Exam Probe</span>
+                </a>
+               </li>
+
+              <li>
+                <a href="../promptermcq/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                   <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
+                     <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2Zm-3 15H4.828a1 1 0 0 1 0-2h6.238a1 1 0 0 1 0 2Zm0-4H4.828a1 1 0 0 1 0-2h6.238a1 1 0 1 1 0 2Z"/>
+                     <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"/>
+                   </svg>
+                   <span class="ms-3">Prompter MCQ</span>
+                </a>
+               </li>
+
+              <li>
+                <a href="../promptercq/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                   <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.828 10h6.239m-6.239 4h6.239M6 1v4a1 1 0 0 1-1 1H1m14-4v16a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 1h8.239A.97.97 0 0 1 15 2Z"/>
+                   </svg>
+                   <span class="ms-3">Prompter CQ</span>
+                </a>
+               </li>
+               
+              
+            </ul>
+         </div>
+      </aside>
+      
+      <div class="p-2 sm:ml-64">
+         <div class="mt-12">
+            <div class="text-xs py-2 text-gray-500 font-semibold">Admin / Prompter CQ</div>
+            <div class="w-full bg-gray-50 rounded-md p-3 dark:bg-gray-700">
+               <!-- container  -->
+
+               <div class="grid gap-2 grid-cols-3">
+                  <h2 class="text-lg font-bold p-1 dark:text-gray-50">Question Prompt CQ</h2>
+                  <div id="psHolder">
+                     <select id="paperID" class="bg-gray-50 outline-none font-semibold border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="none" selected>Select Paper</option>
+                        <!-- <option value="${ pid }">${ pid } - ${ pidEN }</option> -->
+                        
+                     </select>
+                  </div>
+                  <div id="cHolder" class="p-1.5 text-sm text-right font-bold dark:text-gray-50">
+                     Question Count: <span id="counterspn"></span>
+                  </div>
+               </div>
+               
+               <hr>
+
+               <div>
+                  
+                  
+                     <div class="p-2">
+                        <div>
+                           <label for="question" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">উদ্দীপক</label>
+                           <!--<input type="text" id="question" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type উদ্দীপক Here..." autocomplete="off" required>-->
+                           <textarea id="question" rows="3" class="block outline-none p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type Question Here..."></textarea>
+                        </div>
+                     </div>
+
+                     
+
+                     <div class="grid gap-2 p-4">
+                        <div>
+                           <label for="optionA" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Question A(ক)</label>
+                           <input type="text" id="optionA" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type Content of ক here..." autocomplete="off" required>
+                        </div>
+                        <div>
+                           <label for="optionB" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Question B(খ)</label>
+                           <input type="text" id="optionB" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type Content of খ here..." autocomplete="off" required>
+                        </div>
+                        <div>
+                           <label for="optionC" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Question C(গ)</label>
+                           <input type="text" id="optionC" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type Content of গ here..." autocomplete="off" required>
+                        </div>
+                        <div>
+                           <label for="optionD" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Question D(ঘ)</label>
+                           <input type="text" id="optionD" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type Content of ঘ here..." autocomplete="off" required>
+                        </div>
+                     </div>
+                     
+                     <div class="grid gap-2 grid-cols-2">
+                        
+                        <div> 
+                           <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-green-500 hover:bg-green-600 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700" type="button">Preview</button>
+                        </div>
+                        
+                        <div>
+                           <button id="submitQues" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit Question</button>
+                        </div>
+                        
+                     </div>
+
+
+                     
+
+               </div>
+               <!-- Main modal -->
+               <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                  <div class="relative p-4 w-full max-w-2xl max-h-full">
+                     <!-- Modal content -->
+                     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-3 md:p-4 border-b rounded-t dark:border-gray-600">
+                              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                 Preview
+                              </h3>
+                              <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                 </svg>
+                                 <span class="sr-only">Close modal</span>
+                              </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4">
+                           <div id="" class="flex gap-5 font-medium">
+                              <div id="quesNumber" class="flex-none w-5">#</div>
+                              <div id="prequesHolder" class="grow text-justify">Question here</div>
+                            </div>
+                  
+                            <div>
+                              <div id="optDiv" class="flex gap-2 pl-10">
+                                <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> -->
+                                <span id="optNumber" class="flex-none w-5 h-5">ক.</span>
+                                <div id="optHolderA" class="grow text-justify"></div>
+                              </div>
+                              <div id="optDiv" class="flex gap-2 pl-10">
+                                <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> -->
+                                <span id="optNumber" class="flex-none w-5 h-5">খ.</span>
+                                <div id="optHolderB" class="grow text-justify"></div>
+                              </div>
+                              <div id="optDiv" class="flex gap-2 pl-10">
+                                <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> -->
+                                <span id="optNumber" class="flex-none w-5 h-5">গ.</span>
+                                <div id="optHolderC" class="grow text-justify"></div>
+                              </div>
+                              <div id="optDiv" class="flex gap-2 pl-10">
+                                <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> -->
+                                <span id="optNumber" class="flex-none w-5 h-5">ঘ.</span>
+                                <div id="optHolderD" class="grow text-justify"></div>
+                              </div>
+                              
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                              
+                              <button data-modal-hide="default-modal" type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+      
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+      import { getDatabase, ref, set, onValue, update, get, child } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+      import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged, } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDMkHagk9VF0Ek3HQi1ewDO8j6Y1mvS94U",
+        authDomain: "nexusbyte-9d357.firebaseapp.com",
+        databaseURL: "https://nexusbyte-9d357-default-rtdb.firebaseio.com",
+        projectId: "nexusbyte-9d357",
+        storageBucket: "nexusbyte-9d357.appspot.com",
+        messagingSenderId: "630594067402",
+        appId: "1:630594067402:web:5eac3d5dd5686fb2aa4d33",
+        measurementId: "G-8C9BLJ7QKB",
+      };
+
+      document.getElementById("cHolder").style.display="none";
+
+      document.getElementById("question").addEventListener("input", function() {
+         document.getElementById("prequesHolder").innerHTML = document.getElementById("question").value.replace(/\n/g, "<br>");
+         MathJax.typeset();
+      })
+
+      document.getElementById("optionA").addEventListener("input", function() {
+         document.getElementById("optHolderA").innerHTML = document.getElementById("optionA").value;
+         MathJax.typeset();
+      })
+
+      document.getElementById("optionB").addEventListener("input", function() {
+         document.getElementById("optHolderB").innerHTML = document.getElementById("optionB").value;
+         MathJax.typeset();
+      })
+
+      document.getElementById("optionC").addEventListener("input", function() {
+         document.getElementById("optHolderC").innerHTML = document.getElementById("optionC").value;
+         MathJax.typeset();
+      })
+
+      document.getElementById("optionD").addEventListener("input", function() {
+         document.getElementById("optHolderD").innerHTML = document.getElementById("optionD").value;
+         MathJax.typeset();
+      })
+
+
+      // firebase code
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      //Initialise Database
+
+      const db = getDatabase(app);
+
+
+            // auth setup
+
+      const auth = getAuth();
+
+      auth.languageCode = "it";
+
+      const provider = new GoogleAuthProvider();
+
+      // Check user signed in or not
+
+       onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in
+
+         // document.getElementById("userUID").innerHTML = user.uid;
+
+          document.getElementById("userName").innerHTML = user.displayName;
+
+          document.getElementById("userMail").innerHTML = user.email;
+
+          document.getElementById("userImg").src = user.photoURL;
+
+          
+
+      onValue(ref(db, `Questions/${user.uid}/mains`), (snapshot) => {
+         const PaperData = snapshot.val();
+
+         //condition importent
+
+         
+         if (PaperData === null) {
+          // condition { if data is null then show null div}
+         } else {
+            
+            let PaperArray = [];
+            let p1 = `<select id="paperID" class="bg-gray-50 outline-none font-semibold border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> <option value="none" selected>Select Paper</option>`;
+
+            let optns = "";
+
+            let p2 = `</select>`;
+
+            for (let x in PaperData) {
+               // Accessing data for a specific entry
+               
+               let pid = x;
+
+               let snPaperData = PaperData[x];
+
+               let pidEN = snPaperData.details.examName;
+
+               optns += `<option value="${ pid }">${ pid } - ${ pidEN }</option>`;
+               
+            }
+            
+            document.getElementById("psHolder").innerHTML = p1 + optns + p2;
+            let paperID = document.getElementById("paperID");
+            paperID.addEventListener("change", getCount); 
+         }
+      }, {
+         onlyOnce: true
+      });
+
+
+
+      function getCount() {
+         let paperIDVal = document.getElementById("paperID").value;
+         
+         //console.log(paperIDVal);
+
+         if (paperIDVal != "none") {
+            const counterRef = ref(db, `/Questions/${user.uid}/mains/${paperIDVal}/cq`);
+
+            onValue(counterRef, (snapshot) => {
+               const counterData = snapshot.val();
+
+               //condition importent
+
+               //console.log(counterData); 
+
+               if (counterData === null) {
+                  // condition { if data is null }
+                  document.getElementById("counterspn").innerHTML = "0";
+                  document.getElementById("cHolder").style.display="block";
+               } else {
+
+                  let count = 0;
+                  for (let y in counterData) {
+                     count += 1 ;
+                  }
+
+                  document.getElementById("counterspn").innerHTML = count;
+                  document.getElementById("cHolder").style.display="block";
+               }
+            });
+
+         } else {
+            document.getElementById("cHolder").style.display="none";
+         }
+      }
+
+
+
+      function setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD) {
+
+         const d = new Date();
+         let uc = d.getTime();
+
+         set(ref(db, `Questions/${user.uid}/mains/${paperIDValue}/cq/${uc}`), {
+            
+            CqQuesA : optionA,
+            CqQuesB: optionB,
+            CqQuesC: optionC,
+            CqQuesD: optionD,
+            CqQues: question,
+            quesTitle: uc
+         })
+         .then(() => {
+            // Data saved successfully!
+            document.getElementById("question").value = "";
+
+            document.getElementById("optionA").value = "";
+            document.getElementById("optionB").value = "";
+            document.getElementById("optionC").value = "";
+            document.getElementById("optionD").value = "";
+            
+            document.getElementById("prequesHolder").innerHTML = "";
+         
+            document.getElementById("optHolderA").innerHTML = "";
+            document.getElementById("optHolderB").innerHTML = "";
+            document.getElementById("optHolderC").innerHTML = "";
+            document.getElementById("optHolderD").innerHTML = "";      
+
+            document.getElementById("submitQues").style.display = "block";
+         });
+
+      }
+
+      
+
+      let submitQues = document.getElementById("submitQues");
+      submitQues.addEventListener("click", getData);
+      
+
+
+      function getData() {
+
+         let question = document.getElementById("question").value.replace(/\n/g, "<br>");
+
+         let optionA = document.getElementById("optionA").value;
+         let optionB = document.getElementById("optionB").value;
+         let optionC = document.getElementById("optionC").value;
+         let optionD = document.getElementById("optionD").value;
+
+       
+         let paperIDValue = document.getElementById("paperID").value;
+
+         
+         if (paperIDValue != "none" && question != "" && optionA != "" && optionB != "" && optionC != "" && optionD != "") {
+            
+            document.getElementById("submitQues").style.display = "none";
+            setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD);
+            
+         } else {
+            // do nothing
+         }
+      }
+
+        } else {
+          // User is signed out
+
+          window.location.href = "../../signin/";
+        }
+      });
+    </script>
+  </body>
+  </html> 
