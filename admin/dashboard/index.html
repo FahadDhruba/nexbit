@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <!-- tailwind cdn links -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- adorsho-lipi fonts -->
+    <link href="https://fonts.maateen.me/adorsho-lipi/font.css" rel="stylesheet">
+
+    <style>
+        table {
+            font-family: 'AdorshoLipi', sans-serif;
+        }
+    </style>
+
+
+</head>
+
+<body class="dark:bg-gray-800">
+
+
+
+
+    <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <div class="px-2 py-2 lg:px-2 lg:pl-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-start rtl:justify-end">
+                    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar"
+                        aria-controls="logo-sidebar" type="button"
+                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                        <span class="sr-only">Open sidebar</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" fill-rule="evenodd"
+                                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+                            </path>
+                        </svg>
+                    </button>
+                    <a href="#" class="flex ms-2 md:me-24">
+                        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
+                        <span
+                            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">NexBit</span>
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <div class="flex items-center ms-3">
+                        <div>
+                            <button type="button"
+                                class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                                aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                                <span class="sr-only">Open user menu</span>
+                                <img class="w-8 h-8 rounded-full" id="userImg"
+                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                    alt="user photo">
+                            </button>
+                        </div>
+                        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                            id="dropdown-user">
+                            <div class="px-4 py-3" role="none">
+                                <p id="userName" class="text-sm text-gray-900 dark:text-white" role="none">
+                                    Neil Sims
+                                </p>
+                                <p id="userMail" class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
+                                    role="none">
+                                    neil.sims@flowbite.com
+                                </p>
+                            </div>
+                            <ul class="py-1" role="none">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Profile</a>
+                                </li>
+
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Sign out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+        <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+           <ul class="space-y-2 font-medium">
+              <li>
+                 <a href="../dashboard/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none" viewBox="0 0 20 18">
+                       <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M1 7h18M4 4h.01M7 4h.01M10 4h.01M3 17h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"/>
+                     </svg>
+                    <span class="ms-3">Dashboard</span>
+                 </a>
+              </li>
+              <li>
+               <a href="../examprobe/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                    <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10ZM17 13h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2Z"/>
+                  </svg>
+                  <span class="ms-3">Exam Probe</span>
+               </a>
+              </li>
+
+             <li>
+               <a href="../promptermcq/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
+                    <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2Zm-3 15H4.828a1 1 0 0 1 0-2h6.238a1 1 0 0 1 0 2Zm0-4H4.828a1 1 0 0 1 0-2h6.238a1 1 0 1 1 0 2Z"/>
+                    <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"/>
+                  </svg>
+                  <span class="ms-3">Prompter MCQ</span>
+               </a>
+              </li>
+
+             <li>
+               <a href="../promptercq/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.828 10h6.239m-6.239 4h6.239M6 1v4a1 1 0 0 1-1 1H1m14-4v16a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 1h8.239A.97.97 0 0 1 15 2Z"/>
+                  </svg>
+                  <span class="ms-3">Prompter CQ</span>
+               </a>
+              </li>
+              
+             
+           </ul>
+        </div>
+     </aside>
+
+    <div class="p-2 sm:ml-64">
+        <div class="mt-12">
+            <div class="text-xs py-2 text-gray-500 font-semibold">Admin / Dashboard</div>
+            <div class="w-full bg-gray-50 rounded-md p-3 dark:bg-gray-700">
+                <!-- container  -->
+
+                <div class="grid gap-2 grid-cols-3">
+                    <h2 class="text-lg font-bold p-1 dark:text-gray-50">Dashboard</h2>
+
+                </div>
+
+                <hr>
+
+                <div class="p-2">
+
+
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead
+                                class="text-xs text-gray-700 text-center uppercase bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-3 py-2">
+                                        Exam Name
+                                    </th>
+                                    <th scope="col" class="px-3 py-2">
+                                        Subject-Paper
+                                    </th>
+                                    <th scope="col" class="px-3 py-2">
+                                        Chapter
+                                    </th>
+                                    <th scope="col" class="px-3 py-2">
+                                        Question(MCQ-CQ)
+                                    </th>
+                                    <th scope="col" class="px-3 py-2">
+                                        View
+                                    </th>
+                                    <th scope="col" class="px-3 py-2">
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataTable">
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+        import { getDatabase, ref, set, onValue, query, update, get, orderByChild, orderByValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged, } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDMkHagk9VF0Ek3HQi1ewDO8j6Y1mvS94U",
+            authDomain: "nexusbyte-9d357.firebaseapp.com",
+            databaseURL: "https://nexusbyte-9d357-default-rtdb.firebaseio.com",
+            projectId: "nexusbyte-9d357",
+            storageBucket: "nexusbyte-9d357.appspot.com",
+            messagingSenderId: "630594067402",
+            appId: "1:630594067402:web:5eac3d5dd5686fb2aa4d33",
+            measurementId: "G-8C9BLJ7QKB",
+        };
+
+
+        // firebase code
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        //Initialise Database
+
+        const db = getDatabase(app);
+
+        // auth setup
+
+        const auth = getAuth();
+
+        auth.languageCode = "it";
+
+        const provider = new GoogleAuthProvider();
+
+        // Check user signed in or not
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in
+
+                // document.getElementById("userUID").innerHTML = user.uid;
+
+                document.getElementById("userName").innerHTML = user.displayName;
+
+                document.getElementById("userMail").innerHTML = user.email;
+
+                document.getElementById("userImg").src = user.photoURL;
+
+
+
+                //const dashRef = query(ref(db, `Questions/${user.uid}/mains/`), orderByValue('details/paper'));
+                const dashRef = ref(db, `Questions/${user.uid}/mains/`);
+
+                onValue(dashRef, (snapshot) => {
+                    const dashRefData = snapshot.val();
+
+                    //condition importent
+
+
+
+                    if (dashRefData === null) {
+                        // condition { if data is null then show null div}
+                        document.getElementById('dataTable').innerHTML = `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center"> <td colspan="6" class="py-2"> Sorry...!!! No Data Found... </td> </tr>`;
+                    } else {
+
+                        let tableRowData = '';
+
+                        for (let exam in dashRefData) {
+                            // Accessing data for a specific entry
+
+                            let examid = exam;
+
+                            let examData = dashRefData[exam];
+
+                            let examName = examData.details.examName;
+                            let sub = examData.details.sub;
+                            let paper = examData.details.paper;
+                            let chapter = examData.details.chapter;
+
+                            let mcqcount = 0;
+
+                            for (let y in examData.mcq) {
+                                mcqcount += 1;
+                            }
+
+                            let cqcount = 0;
+
+                            for (let z in examData.cq) {
+                                cqcount += 1;
+                            }
+
+                            tableRowData += `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center"> <th scope="row" class="px-3 py-2 font-bold text-gray-900 whitespace-nowrap dark:text-white"> ${examName} </th> <td class="px-3 py-2"> ${sub}-${paper} </td> <td class="px-3 py-2"> ${chapter} </td> <td class="px-3 py-2"> ${mcqcount}-${cqcount} </td> <td class="px-3 py-2"> <a href="../actions/?eid=${examid}" class="font-bold text-green-600 rounded-sm bg-gray-100 px-2 py-1 dark:text-green-500 hover:underline">View</a> </td> <td class="px-3 py-2"> <a href="#" class="font-bold text-blue-600 dark:text-blue-500 hover:underline">Edit</a> <a href="#" class="font-bold text-red-600 dark:text-red-500 hover:underline">Delete</a> </td> </tr>`;
+                        }
+
+                        document.getElementById('dataTable').innerHTML = tableRowData;
+                    }
+                });
+
+            } else {
+                // User is signed out
+
+                window.location.href = "../../signin/";
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
