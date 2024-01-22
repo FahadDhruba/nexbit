@@ -56,7 +56,6 @@
 
       const provider = new GoogleAuthProvider();
 
-      //###############
       const database = getDatabase(app);
 
       function writeUserData(
@@ -80,13 +79,10 @@
         })
         .then(() => {
           // Data saved successfully!
+          
           document.getElementById("res").innerHTML = "Signing you In..."
 
-          // PrePage
-
-         
-
-          window.location.href = "../admin/developer/";
+          window.location.href = "../admin/dashboard/";
           
         })
         .catch((error) => {
@@ -103,10 +99,7 @@
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
-            // IdP data available using getAdditionalUserInfo(result)
-            //console.log(user);
             
-
             const poor = JSON.stringify(user);
 
             writeUserData(
