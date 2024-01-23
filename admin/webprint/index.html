@@ -333,13 +333,11 @@
               document.getElementById("printPagesHolder").appendChild(newSectionToAppend);
               
               if (pageBreakStatus == 'true') {
-                document.getElementById("printPagesHolder").innerHTML = document.getElementById("printPagesHolder").innerHTML + `<section id="pagebreakholder"></section>`;
-                //let newPBStxt = document.createTextNode(`<section id="pagebreakholder"></section>`);
-                //document.getElementById("printPagesHolder").appendChild(newPBStxt);
+                //document.getElementById("printPagesHolder").innerHTML = document.getElementById("printPagesHolder").innerHTML + `<section id="pagebreakholder"></section>`;
                 
-                //const newPBToAppend = document.createElement('section');
-                //newPBToAppend.id = "pagebreakholder";
-                //document.getElementById("printPagesHolder").appendChild(newPBToAppend);
+                const newPBToAppend = document.createElement('section');
+                newPBToAppend.id = "pagebreakholder";
+                document.getElementById("printPagesHolder").appendChild(newPBToAppend);
               } else {
 
               }
