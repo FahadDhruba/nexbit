@@ -14,6 +14,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
       MathJax = {
+        loader: {load: ['input/asciimath', 'output/chtml', 'ui/menu']},
         tex: {
           inlineMath: [['$', '$'], ['\\(', '\\)']]
         }
@@ -172,11 +173,10 @@
                         </div>
                      </div>
                      
-                     <div class="grid gap-2 grid-cols-4">
+                     <div class="grid gap-2 grid-cols-4 items-end">
                         <div>
-                           <label for="corrOption" class="block p-2.5 mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
-                        </div>
-                        <div>
+                           <label for="corrOption" class="block px-2.5 mb-1 text-sm font-medium text-gray-900 dark:text-white">Select Correct Option</label>
+                        
                            <select id="corrOption" class="bg-gray-200 font-semibold border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                            <option value="none" selected>Correct Option</option>
                            <option value="a">Option A</option>
@@ -185,11 +185,22 @@
                            <option value="d">Option D</option>
                            </select>
                         </div>
-                        <div> 
-                           <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-green-500 hover:bg-green-600 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700" type="button">Preview</button>
+
+                       <div>
+                           <label for="ansCol" class="block px-2.5 mb-1 text-sm font-medium text-gray-900 dark:text-white">Select Column</label>
+                        
+                           <select id="ansCol" class="bg-gray-200 font-semibold border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                           <option value="2" selected>2 Column</option>
+                           <option value="1">1 Column</option>
+                           <option value="4">4 Column</option>
+                           </select>
+                       </div>
+                       
+                        <div class="flex flex-col"> 
+                           <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-green-500 hover:bg-green-600 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 mx-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700" type="button">Preview</button>
                         </div>
-                        <div>
-                           <button id="submitQues" class="transition ease-in-out text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit Question</button>
+                        <div class="flex flex-col">
+                           <button id="submitQues" class="transition ease-in-out text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                         </div>
                      </div>
 
@@ -430,7 +441,7 @@
 
 
 
-      function setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, corrOption) {
+      function setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, corrOption, ansCol) {
 
          const d = new Date();
          let uc = d.getTime();
@@ -442,7 +453,8 @@
             optC: optionC,
             optD: optionD,
             quesContent: question,
-            quesTitle: uc
+            quesTitle: uc,
+            ansCol: ansCol
          })
          .then(() => {
             // Data saved successfully!
@@ -455,6 +467,8 @@
 
             document.getElementById("corrOption").value = "none";
 
+            document.getElementById("ansCol").value = "2";
+      
             // clear the preview modal
             document.getElementById("prequesHolder").innerHTML = "";
          
@@ -489,11 +503,13 @@
          let corrOption = document.getElementById("corrOption").value;
          let paperIDValue = document.getElementById("paperID").value;
 
+         let ansCol = document.getElementById("ansCol").value;
+        
          
-         if (paperIDValue != "none" && question != "" && optionA != "" && optionB != "" && optionC != "" && optionD != "" && corrOption != "none") {
+         if (paperIDValue != "none" && question != "" && optionA != "" && optionB != "" && optionC != "" && optionD != "" && corrOption != "none" && ansCol != "") {
             
             document.getElementById("submitQues").style.display = "none";
-            setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, corrOption);
+            setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, corrOption, ansCol);
             
          } else {
             // do nothing
