@@ -441,7 +441,7 @@
 
 
 
-      function setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, corrOption) {
+      function setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, corrOption, ansCol) {
 
          const d = new Date();
          let uc = d.getTime();
@@ -453,7 +453,8 @@
             optC: optionC,
             optD: optionD,
             quesContent: question,
-            quesTitle: uc
+            quesTitle: uc,
+            ansCol: ansCol
          })
          .then(() => {
             // Data saved successfully!
@@ -500,11 +501,13 @@
          let corrOption = document.getElementById("corrOption").value;
          let paperIDValue = document.getElementById("paperID").value;
 
+         let ansCol = document.getElementById("ansCol").value;
+        
          
-         if (paperIDValue != "none" && question != "" && optionA != "" && optionB != "" && optionC != "" && optionD != "" && corrOption != "none") {
+         if (paperIDValue != "none" && question != "" && optionA != "" && optionB != "" && optionC != "" && optionD != "" && corrOption != "none" && ansCol != "") {
             
             document.getElementById("submitQues").style.display = "none";
-            setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, corrOption);
+            setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, corrOption, ansCol);
             
          } else {
             // do nothing
