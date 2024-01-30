@@ -312,11 +312,16 @@
                             // Find Button's Id when its clicked
  
                             var examId = this.id;
- 
-                            // send the ID to work on the basis of its type
- 
-                            examDelete(examId, user.uid);
-                              
+
+
+                            let text = `Confirm Droping this Exam.\nExam ID : ${examId}`;
+  
+                            if (confirm(text) == true) {
+                              examDelete(examId, user.uid);
+                            } else {
+    
+                            }
+   
                           });
                         }
 
