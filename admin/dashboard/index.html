@@ -298,7 +298,7 @@
                                 cqcount += 1;
                             }
 
-                            tableRowData += `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center"> <th scope="row" class="px-3 py-2 font-bold text-gray-900 whitespace-nowrap dark:text-white"> ${examName} </th> <td class="px-3 py-2"> ${sub}-${paper} </td> <td class="px-3 py-2"> ${chapter} </td> <td class="px-3 py-2"> ${mcqcount}-${cqcount} </td> <td class="px-3 py-2"> <a href="../actions/?eid=${examid}" class="font-bold text-green-600 rounded-sm bg-gray-100 px-2 py-1 dark:text-green-500 hover:underline">View</a> </td> <td class="px-3 py-2"> <a href="#" class="font-bold text-blue-600 dark:text-blue-500 hover:underline">Edit</a> <a href="#" class="font-bold text-red-600 dark:text-red-500 hover:underline">Delete</a> </td> </tr>`;
+                            tableRowData += `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center"> <th scope="row" class="px-3 py-2 font-bold text-gray-900 whitespace-nowrap dark:text-white"> ${examName} </th> <td class="px-3 py-2"> ${sub}-${paper} </td> <td class="px-3 py-2"> ${chapter} </td> <td class="px-3 py-2"> ${mcqcount}-${cqcount} </td> <td class="px-3 py-2"> <a href="../actions/?eid=${examid}" class="font-bold text-green-600 rounded-sm bg-gray-100 px-2 py-1 dark:text-green-500 hover:underline">View</a> </td> <td class="px-3 py-2"> <a href="#" class="font-bold text-blue-600 dark:text-blue-500 hover:underline">Edit</a> <button onclick="alert('click');" class="font-bold text-red-600 dark:text-red-500 hover:underline">Delete</button> </td> </tr>`;
                         }
 
                         document.getElementById('dataTable').innerHTML = tableRowData;
