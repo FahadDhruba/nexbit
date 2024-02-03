@@ -441,7 +441,7 @@
 
 
 
-      function setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, corrOption, ansCol) {
+      function setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, ansArray, corrOption, ansCol) {
 
          const d = new Date();
          let uc = d.getTime();
@@ -452,6 +452,7 @@
             optB: optionB,
             optC: optionC,
             optD: optionD,
+            ansArr: ansArray,
             quesContent: question,
             quesTitle: uc,
             ansCol: ansCol
@@ -509,7 +510,8 @@
          if (paperIDValue != "none" && question != "" && optionA != "" && optionB != "" && optionC != "" && optionD != "" && corrOption != "none" && ansCol != "") {
             
             document.getElementById("submitQues").style.display = "none";
-            setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, corrOption, ansCol);
+            let ansArray = [optionA, optionB, optionC, optionD];
+            setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, ansArray, corrOption, ansCol);
             
          } else {
             // do nothing

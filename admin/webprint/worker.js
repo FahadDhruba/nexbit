@@ -70,10 +70,14 @@ onmessage = (e) => {
 
       ansArray.push(ans)
 
+      /*
       const optA = entry.optA;
       const optB = entry.optB;
       const optC = entry.optC;
       const optD = entry.optD;
+      */
+
+      const [optA, optB, optC, optD] = entry.ansArr;
 
       
       const ansCol = entry.ansCol;
@@ -86,7 +90,7 @@ onmessage = (e) => {
 
       counter += 1;
 
-      MCQquesContent += `<div id="quesDiv" class="flex gap-5 font-medium"> <div id="quesNumber" class="flex-none w-5">${quesNumber}.</div> <div id="quesHolder" class="grow text-justify">${quesContent}</div> </div> <div class="grid grid-cols-${ansCol}"> <div id="optDiv" class="flex gap-2 pl-10"> <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> --> <span id="optNumber" class="flex-none w-3">a.</span> <div id="optHolder" class="grow text-justify">${optA}</div> </div> <div id="optDiv" class="flex gap-2 pl-10"> <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> --> <span id="optNumber" class="flex-none w-3">b.</span> <div id="optHolder" class="grow text-justify">${optB}</div> </div> <div id="optDiv" class="flex gap-2 pl-10"> <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> --> <span id="optNumber" class="flex-none w-3">c.</span> <div id="optHolder" class="grow text-justify">${optC}</div> </div> <div id="optDiv" class="flex gap-2 pl-10"> <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> --> <span id="optNumber" class="flex-none w-3">d.</span> <div id="optHolder" class="grow text-justify">${optD}</div> </div> </div>`;//gap-1 grid grid-cols-2
+      MCQquesContent += `<div id="quesDiv" class="flex gap-4 font-semibold"> <div id="quesNumber" class="flex-none w-5">${quesNumber}.</div> <div id="quesHolder" class="grow text-justify">${quesContent}</div> </div> <div class="grid grid-cols-${ansCol}"> <div id="optDiv" class="flex gap-2 pl-10"> <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> --> <span id="optNumber" class="flex-none w-3">a.</span> <div id="optHolder" class="grow text-justify">${optA}</div> </div> <div id="optDiv" class="flex gap-2 pl-10"> <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> --> <span id="optNumber" class="flex-none w-3">b.</span> <div id="optHolder" class="grow text-justify">${optB}</div> </div> <div id="optDiv" class="flex gap-2 pl-10"> <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> --> <span id="optNumber" class="flex-none w-3">c.</span> <div id="optHolder" class="grow text-justify">${optC}</div> </div> <div id="optDiv" class="flex gap-2 pl-10"> <!-- <span id="optNumber" class="inline-flex items-center justify-center border border-gray-900 w-3 h-3 p-2 text-md font-medium rounded-full">b</span> --> <span id="optNumber" class="flex-none w-3">d.</span> <div id="optHolder" class="grow text-justify">${optD}</div> </div> </div>`;//gap-1 grid grid-cols-2
     }
 
 
