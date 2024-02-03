@@ -70,10 +70,14 @@ onmessage = (e) => {
 
       ansArray.push(ans)
 
+      /*
       const optA = entry.optA;
       const optB = entry.optB;
       const optC = entry.optC;
       const optD = entry.optD;
+      */
+
+      const [optA, optB, optC, optD] = entry.ansArr;
 
       
       const ansCol = entry.ansCol;
