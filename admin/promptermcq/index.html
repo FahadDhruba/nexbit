@@ -154,7 +154,7 @@
 
                      
 
-                     <div class="grid gap-2 grid-cols-2 p-2">
+                     <div class="grid gap-2 grid-cols-2 md:grid-cols-3 p-2">
                         <div>
                            <label for="optionA" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Option A</label>
                            <input type="text" id="optionA" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type Content of Option A here..." autocomplete="off" required>
@@ -171,6 +171,11 @@
                            <label for="optionD" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Option D</label>
                            <input type="text" id="optionD" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type Content of Option D here..." autocomplete="off" required>
                         </div>
+                        
+                        <div>
+                           <label for="optionE" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Option E</label>
+                           <input type="text" id="optionE" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type Content of Option E here..." autocomplete="off" required>
+                        </div>
                      </div>
                      
                      <div class="grid gap-2 grid-cols-4 items-end">
@@ -183,6 +188,7 @@
                            <option value="b">Option B</option>
                            <option value="c">Option C</option>
                            <option value="d">Option D</option>
+                           <option value="e">Option E</option>
                            </select>
                         </div>
 
@@ -496,7 +502,7 @@
          let optionB = document.getElementById("optionB").value;
          let optionC = document.getElementById("optionC").value;
          let optionD = document.getElementById("optionD").value;
-         let optionE = "null";
+         let optionE = document.getElementById("optionE").value;
         
          let corrOption = document.getElementById("corrOption").value;
          let paperIDValue = document.getElementById("paperID").value;
