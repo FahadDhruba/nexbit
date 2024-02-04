@@ -441,17 +441,13 @@
 
 
 
-      function setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, ansArray, corrOption, ansCol) {
+      function setInputToDB(paperIDValue, question, ansArray, corrOption, ansCol) {
 
          const d = new Date();
          let uc = d.getTime();
 
          set(ref(db, `Questions/${user.uid}/mains/${paperIDValue}/mcq/${uc}`), {
             ans : corrOption,
-            optA : optionA,
-            optB: optionB,
-            optC: optionC,
-            optD: optionD,
             ansArr: ansArray,
             quesContent: question,
             quesTitle: uc,
@@ -500,7 +496,8 @@
          let optionB = document.getElementById("optionB").value;
          let optionC = document.getElementById("optionC").value;
          let optionD = document.getElementById("optionD").value;
-
+         let optionE = null;
+        
          let corrOption = document.getElementById("corrOption").value;
          let paperIDValue = document.getElementById("paperID").value;
 
@@ -510,8 +507,8 @@
          if (paperIDValue != "none" && question != "" && optionA != "" && optionB != "" && optionC != "" && optionD != "" && corrOption != "none" && ansCol != "") {
             
             document.getElementById("submitQues").style.display = "none";
-            let ansArray = [optionA, optionB, optionC, optionD];
-            setInputToDB(paperIDValue, question, optionA, optionB, optionC, optionD, ansArray, corrOption, ansCol);
+            let ansArray = [optionA, optionB, optionC, optionD, optionE];
+            setInputToDB(paperIDValue, question, ansArray, corrOption, ansCol);
             
          } else {
             // do nothing
