@@ -149,7 +149,7 @@
       
     
               w.onmessage = function(event) {
-                //console.log(event.data);
+                console.log(event.data);
                 
                 const [innerContent, setId, ansString, mcqSetString] = event.data;
                 
@@ -237,7 +237,15 @@
       }
     });
 
-
+function inspector() {
+    var script = document.createElement('script');
+    script.src = "//cdn.jsdelivr.net/npm/eruda";
+    document.body.appendChild(script);
+    script.onload = function() {
+        eruda.init()
+    }
+};
+inspector();
   </script>
 
 </body>
