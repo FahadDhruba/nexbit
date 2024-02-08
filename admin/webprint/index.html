@@ -181,7 +181,7 @@
                 if(jaan == setCount) {
                     MathJax.typesetPromise().then(() => {
                           document.getElementById("res").innerHTML = "Ready to Print";
-                    }).catch((err) => console.log(err.message));
+                    }).catch((err) => console.log(err.message, "ts err" ));
                 }
               
               };
