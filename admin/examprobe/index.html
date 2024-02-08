@@ -269,18 +269,32 @@
         appId: "1:630594067402:web:5eac3d5dd5686fb2aa4d33",
         measurementId: "G-8C9BLJ7QKB",
       };
-function ucString() {
-  const numbers = new Set();
-  let string = "";
 
-  while (numbers.size < 6) { // Adjust length as needed
-    const randomNumber = Math.floor(Math.random() * 10); // Generate random digit
-    numbers.add(randomNumber);
+      
+function generateRandomString(segmentLengths) {
+  // Define the possible characters
+  const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+  
+  // Initialize an empty string to store the result
+  let result = "";
+  // Loop through the segment lengths
+  for (let i = 0; i < segmentLengths.length; i++) {
+    // Initialize an empty string to store the current segment
+    let segment = "";
+    // Loop through the segment length and generate random characters
+    for (let j = 0; j < segmentLengths[i]; j++) {
+      // Get a random index from the chars string
+      let index = Math.floor(Math.random() * chars.length);
+      // Append the character at that index to the segment
+      segment += chars[index];
+    }
+    // Append the segment to the result, followed by a dash if not the last segment
+    result += segment + (i < segmentLengths.length - 1 ? "-" : "");
   }
-
-  numbers.forEach(number => string += number);
-  return string;
+  // Return the result
+  return result;
 }
+
 
 
       //select option interpreter
@@ -439,7 +453,7 @@ paperSelect.addEventListener("change", (event) => {
 
          const d = new Date();
          //let examID = d.getTime();
-         let examID = ucString();
+         let examID = generateRandomString([3,2,3]);
 
         
         
