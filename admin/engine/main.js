@@ -64,7 +64,7 @@ onAuthStateChanged(auth, (user) => {
             const input = document.getElementById("boardRef");
             const filter = input.value.toUpperCase();
             const div = document.getElementById("reffilHolder");
-            const a = div.getElementsByTagName("button");
+            const a = div.getElementsByTagName("a");
             for (let i = 0; i < a.length; i++) {
               txtValue = a[i].textContent || a[i].innerText;
               if (txtValue.toUpperCase().indexOf(filter) > -1) {
