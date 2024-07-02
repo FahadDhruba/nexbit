@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Engine</title>
 
     <!-- tailwind cdn links -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -153,6 +153,84 @@
 
                     <div class="">
                         
+
+                        <div class="mx-2">
+
+                            <div class="mb-5">
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Question</label>
+                                <div id="questionDiv" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" contenteditable="true" data-placeholder="Type question here"></div>
+                            </div>
+
+                            <div class="mb-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div>
+                                    
+                                    <label class="block text-sm font-medium text-gray-900 dark:text-white">Board Reference</label>
+                                        <div class="p-1">
+                                            
+                                            <span id="" class="inline-flex items-center px-2 py-1 m-1 text-sm font-medium text-slate-800 bg-green-400 rounded dark:bg-green-900 dark:text-green-300">
+                                                Dhaka 2023
+                                                <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-slate-800 bg-transparent rounded-sm hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300">
+                                                <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                                </svg>
+                                                </button>
+                                            </span>
+                                            <span id="" class="inline-flex items-center px-2 py-1 m-1 text-sm font-medium text-slate-800 bg-green-400 rounded dark:bg-green-900 dark:text-green-300">
+                                                2023
+                                                <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-slate-800 bg-transparent rounded-sm hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300">
+                                                <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                                </svg>
+                                                </button>
+                                            </span>
+                                            <span id="" class="inline-flex items-center px-2 py-1 m-1 text-sm font-medium text-slate-800 bg-green-400 rounded dark:bg-green-900 dark:text-green-300">
+                                                Rajshahi 2023
+                                                <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-slate-800 bg-transparent rounded-sm hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300">
+                                                <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                                </svg>
+                                                </button>
+                                            </span>
+
+
+                                        </div>
+                                    <input type="text" id="boardRef" onkeyup="filterFunction()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type to search" required />
+                                    
+                                    <div id="reffilHolder" class="m-1 h-full max-h-36 overflow-auto"><!-- grid grid-cols-1 gap-1  -->
+                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Dhaka Board 2023</button>
+                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Jessore Board 2023</button>
+                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Mymensingh Board 2023</button>
+                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Chattogram Board 2023</button>
+                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Dinajpur Board 2023</button>
+                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Sylhet Board 2023</button>
+                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Cumilla Board 2023</button>
+                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Barishal Board 2023</button>
+                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Rajshahi Board 2023</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Univarsity Reference</label>
+                                    <input type="text" id="uniRef" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type to search" required />
+                                    
+                                    <div id="yearfilHolder" class="grid grid-cols-1 gap-1 m-1">
+                                        <button id="chip" class="relative grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Dhaka Board 2023</button>
+                                        <button id="chip" class="relative grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Rajshahi Board 2023</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-5">
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                            <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                            </div>
+                            <div class="flex items-start mb-5">
+                            <div class="flex items-center h-5">
+                                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                            </div>
+                            <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                            </div>
+                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                        </div>
+  
                     </div>
 
 
@@ -172,6 +250,23 @@
 
 
     <script type="module" src="main.js"></script>
+
+    <script>
+        function filterFunction() {
+            const input = document.getElementById("boardRef");
+            const filter = input.value.toUpperCase();
+            const div = document.getElementById("reffilHolder");
+            const a = div.getElementsByTagName("button");
+            for (let i = 0; i < a.length; i++) {
+              txtValue = a[i].textContent || a[i].innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+              } else {
+                a[i].style.display = "none";
+              }
+            }
+          }
+    </script>
 </body>
 
 </html>
