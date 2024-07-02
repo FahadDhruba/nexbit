@@ -402,9 +402,9 @@
 
         let slctdBoardRef = [];
 
-        for (const key in boardRefObject) {
-            document.getElementById("reffilHolder").innerHTML += `<button id="chip" onclick="addtoslctdArray(this.innerHTML)" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">${key}</button>`;
-        }
+        // for (const key in boardRefObject) {
+        //     document.getElementById("reffilHolder").innerHTML += `<button id="chip" onclick="addtoslctdArray(this.innerHTML)" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">${key}</button>`;
+        // }
 
 
         function addtoslctdArray(btntext) {
@@ -424,17 +424,35 @@
 
 
         function filterFunction() {
-            const input = document.getElementById("boardRef");
-            const filter = input.value.toUpperCase();
-            const div = document.getElementById("reffilHolder");
-            const a = div.getElementsByTagName("button");
-            for (let i = 0; i < a.length; i++) {
-                txtValue = a[i].textContent || a[i].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    a[i].style.display = "";
-                } else {
-                    a[i].style.display = "none";
+            // const input = document.getElementById("boardRef");
+            // const filter = input.value.toUpperCase();
+            // const div = document.getElementById("reffilHolder");
+            // const a = div.getElementsByTagName("button");
+            // for (let i = 0; i < a.length; i++) {
+            //     txtValue = a[i].textContent || a[i].innerText;
+            //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            //         a[i].style.display = "";
+            //     } else {
+            //         a[i].style.display = "none";
+            //     }
+            // }
+            const input = doocumentt.getElementById("boardRef").value.toLowerCase();
+            const boardRefHolder = document.getElementById("reffilHolder");
+            boardRefHolder.innerHTML = '';
+
+            if (input.trim() !== '') {
+                const filteredArray = Object.keys(boardRefObject).filter(key =>
+                        key.includes(input))
+                        .reduce((obj, key) => {
+                            obj[key] = boardRefObject[key];
+                            return obj;
+                        }, {});
+                for (const key in filteredArray) {
+                    document.getElementById("reffilHolder").innerHTML += `<button id="chip" onclick="addtoslctdArray(this.innerHTML)" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">${key}</button>`;
                 }
+                
+            } else {
+                
             }
         }
     </script>
