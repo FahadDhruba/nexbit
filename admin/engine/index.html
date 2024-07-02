@@ -410,9 +410,15 @@
         function addtoslctdArray(btntext) {
             slctdBoardRef.push(boardRefObject[btntext]);
 
+            let temp = ''; 
             for (let i = 0; i < slctdBoardRef.length; i++) {
                 console.log(slctdBoardRef[i]);
+
+                temp += `${slctdBoardRef[i].refBoardName} ${slctdBoardRef[i].refYear}`;
+                
             }
+
+            document.getElementById('slctdBoardRefHolder').innerHTML = temp;
         }
 
 
