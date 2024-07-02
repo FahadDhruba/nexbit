@@ -236,7 +236,7 @@
 
                                     <div id="reffilHolder" class="m-1 h-full max-h-36 overflow-auto">
                                         <!-- grid grid-cols-1 gap-1  -->
-                                        <button id="chip"
+                                        <!-- <button id="chip"
                                             class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Dhaka
                                             Board 2023</button>
                                         <button id="chip"
@@ -262,7 +262,7 @@
                                             Board 2023</button>
                                         <button id="chip"
                                             class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Rajshahi
-                                            Board 2023</button>
+                                            Board 2023</button> -->
                                     </div>
                                 </div>
                                 <div>
@@ -428,6 +428,11 @@
                 "refBoardName": "Madrasah Board",
                 "refYear": "2023"
             }
+        }
+
+        for (const key in boardRefObject) {
+            document.getElementById("reffilHolder").innerHTML += `<button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">${key}</button>`;
+
         }
 
 
