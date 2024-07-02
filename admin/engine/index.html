@@ -91,49 +91,66 @@
         </div>
     </nav>
 
-    <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+    <aside id="logo-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+        aria-label="Sidebar">
         <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-           <ul class="space-y-2 font-medium">
-              <li>
-                 <a href="../dashboard/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none" viewBox="0 0 20 18">
-                       <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M1 7h18M4 4h.01M7 4h.01M10 4h.01M3 17h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"/>
-                     </svg>
-                    <span class="ms-3">Dashboard</span>
-                 </a>
-              </li>
-              <li>
-               <a href="../examprobe/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
-                    <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10ZM17 13h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2Z"/>
-                  </svg>
-                  <span class="ms-3">Exam Probe</span>
-               </a>
-              </li>
+            <ul class="space-y-2 font-medium">
+                <li>
+                    <a href="../dashboard/"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none"
+                            viewBox="0 0 20 18">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                                d="M1 7h18M4 4h.01M7 4h.01M10 4h.01M3 17h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" />
+                        </svg>
+                        <span class="ms-3">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../examprobe/"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 18 18">
+                            <path
+                                d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10ZM17 13h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2Z" />
+                        </svg>
+                        <span class="ms-3">Exam Probe</span>
+                    </a>
+                </li>
 
-             <li>
-               <a href="../promptermcq/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
-                    <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2Zm-3 15H4.828a1 1 0 0 1 0-2h6.238a1 1 0 0 1 0 2Zm0-4H4.828a1 1 0 0 1 0-2h6.238a1 1 0 1 1 0 2Z"/>
-                    <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"/>
-                  </svg>
-                  <span class="ms-3">Prompter MCQ</span>
-               </a>
-              </li>
+                <li>
+                    <a href="../promptermcq/"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 16 20">
+                            <path
+                                d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2Zm-3 15H4.828a1 1 0 0 1 0-2h6.238a1 1 0 0 1 0 2Zm0-4H4.828a1 1 0 0 1 0-2h6.238a1 1 0 1 1 0 2Z" />
+                            <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
+                        </svg>
+                        <span class="ms-3">Prompter MCQ</span>
+                    </a>
+                </li>
 
-             <li>
-               <a href="../promptercq/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.828 10h6.239m-6.239 4h6.239M6 1v4a1 1 0 0 1-1 1H1m14-4v16a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 1h8.239A.97.97 0 0 1 15 2Z"/>
-                  </svg>
-                  <span class="ms-3">Prompter CQ</span>
-               </a>
-              </li>
-              
-             
-           </ul>
+                <li>
+                    <a href="../promptercq/"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.828 10h6.239m-6.239 4h6.239M6 1v4a1 1 0 0 1-1 1H1m14-4v16a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 1h8.239A.97.97 0 0 1 15 2Z" />
+                        </svg>
+                        <span class="ms-3">Prompter CQ</span>
+                    </a>
+                </li>
+
+
+            </ul>
         </div>
-     </aside>
+    </aside>
 
     <div class="p-2 sm:ml-64">
         <div class="mt-12">
@@ -152,85 +169,112 @@
 
 
                     <div class="">
-                        
+
 
                         <div class="mx-2">
 
                             <div class="mb-5">
-                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Question</label>
-                                <div id="questionDiv" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" contenteditable="true" data-placeholder="Type question here"></div>
+                                <label
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Question</label>
+                                <div id="questionDiv"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    contenteditable="true" data-placeholder="Type question here"></div>
                             </div>
 
                             <div class="mb-5 grid grid-cols-2 md:grid-cols-4 gap-4">
                                 <div>
-                                    
-                                    <label class="block text-sm font-medium text-gray-900 dark:text-white">Board Reference</label>
-                                        <div class="p-1">
-                                            
-                                            <span id="" class="inline-flex items-center px-2 py-1 m-1 text-sm font-medium text-slate-800 bg-green-400 rounded dark:bg-green-900 dark:text-green-300">
-                                                Dhaka 2023
-                                                <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-slate-800 bg-transparent rounded-sm hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300">
+
+                                    <label class="block text-sm font-medium text-gray-900 dark:text-white">Board
+                                        Reference</label>
+                                    <div id="slctdBoardRefHolder" class="p-1">
+
+                                        <!-- <span id="" class="inline-flex items-center px-2 py-1 m-1 text-xs font-medium text-slate-800 bg-green-400 rounded dark:bg-green-900 dark:text-green-300">
+                                            ${slctdBoardRef[i].refBoardName} ${slctdBoardRef[i].refYear}
+                                            <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-slate-800 bg-transparent rounded-sm hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300">
                                                 <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
                                                 </svg>
-                                                </button>
-                                            </span>
-                                            <span id="" class="inline-flex items-center px-2 py-1 m-1 text-sm font-medium text-slate-800 bg-green-400 rounded dark:bg-green-900 dark:text-green-300">
-                                                2023
-                                                <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-slate-800 bg-transparent rounded-sm hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300">
-                                                <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                                </svg>
-                                                </button>
-                                            </span>
-                                            <span id="" class="inline-flex items-center px-2 py-1 m-1 text-sm font-medium text-slate-800 bg-green-400 rounded dark:bg-green-900 dark:text-green-300">
-                                                Rajshahi 2023
-                                                <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-slate-800 bg-transparent rounded-sm hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300">
-                                                <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                                </svg>
-                                                </button>
-                                            </span>
+                                            </button>
+                                        </span> -->
+                                        
 
 
-                                        </div>
-                                    <input type="text" id="boardRef" onkeyup="filterFunction()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type to search" required />
-                                    
-                                    <div id="reffilHolder" class="m-1 h-full max-h-36 overflow-auto"><!-- grid grid-cols-1 gap-1  -->
-                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Dhaka Board 2023</button>
-                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Jessore Board 2023</button>
-                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Mymensingh Board 2023</button>
-                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Chattogram Board 2023</button>
-                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Dinajpur Board 2023</button>
-                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Sylhet Board 2023</button>
-                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Cumilla Board 2023</button>
-                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Barishal Board 2023</button>
-                                        <button id="chip" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Rajshahi Board 2023</button>
+                                    </div>
+                                    <input type="text" id="boardRef" onkeyup="filterFunction()"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type to search" required />
+
+                                    <div id="reffilHolder" class="m-1 h-full max-h-36 overflow-auto">
+                                        <!-- grid grid-cols-1 gap-1  -->
+                                        <!-- <button id="chip"
+                                            class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Dhaka
+                                            Board 2023</button>
+                                        <button id="chip"
+                                            class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Jessore
+                                            Board 2023</button>
+                                        <button id="chip"
+                                            class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Mymensingh
+                                            Board 2023</button>
+                                        <button id="chip"
+                                            class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Chattogram
+                                            Board 2023</button>
+                                        <button id="chip"
+                                            class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Dinajpur
+                                            Board 2023</button>
+                                        <button id="chip"
+                                            class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Sylhet
+                                            Board 2023</button>
+                                        <button id="chip"
+                                            class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Cumilla
+                                            Board 2023</button>
+                                        <button id="chip"
+                                            class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Barishal
+                                            Board 2023</button>
+                                        <button id="chip"
+                                            class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Rajshahi
+                                            Board 2023</button> -->
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Univarsity Reference</label>
-                                    <input type="text" id="uniRef" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type to search" required />
-                                    
+                                    <label
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Univarsity
+                                        Reference</label>
+                                    <input type="text" id="uniRef"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Type to search" required />
+
                                     <div id="yearfilHolder" class="grid grid-cols-1 gap-1 m-1">
-                                        <button id="chip" class="relative grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Dhaka Board 2023</button>
-                                        <button id="chip" class="relative grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Rajshahi Board 2023</button>
+                                        <button id="chip"
+                                            class="relative grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Dhaka
+                                            Board 2023</button>
+                                        <button id="chip"
+                                            class="relative grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">Rajshahi
+                                            Board 2023</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="mb-5">
-                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                            <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                                <label for="password"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                    password</label>
+                                <input type="password" id="password"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    required />
                             </div>
                             <div class="flex items-start mb-5">
-                            <div class="flex items-center h-5">
-                                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                                <div class="flex items-center h-5">
+                                    <input id="remember" type="checkbox" value=""
+                                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                                        required />
+                                </div>
+                                <label for="remember"
+                                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
+                                    me</label>
                             </div>
-                            <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
-                            </div>
-                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                            <button type="submit"
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                         </div>
-  
+
                     </div>
 
 
@@ -252,20 +296,147 @@
     <script type="module" src="main.js"></script>
 
     <script>
+
+        let boardRefObject = {
+            "Dhaka Board 2022": {
+                "refShortName": "DB",
+                "refBoardName": "Dhaka Board",
+                "refYear": "2022"
+            },
+            "Dhaka Board 2023": {
+                "refShortName": "DB",
+                "refBoardName": "Dhaka Board",
+                "refYear": "2023"
+            },
+            "Chittagong Board 2022": {
+                "refShortName": "CB",
+                "refBoardName": "Chittagong Board",
+                "refYear": "2022"
+            },
+            "Chittagong Board 2023": {
+                "refShortName": "CB",
+                "refBoardName": "Chittagong Board",
+                "refYear": "2023"
+            },
+            "Rajshahi Board 2022": {
+                "refShortName": "RB",
+                "refBoardName": "Rajshahi Board",
+                "refYear": "2022"
+            },
+            "Rajshahi Board 2023": {
+                "refShortName": "RB",
+                "refBoardName": "Rajshahi Board",
+                "refYear": "2023"
+            },
+            "Cumilla Board 2022": {
+                "refShortName": "CuB",
+                "refBoardName": "Cumilla Board",
+                "refYear": "2022"
+            },
+            "Cumilla Board 2023": {
+                "refShortName": "CuB",
+                "refBoardName": "Cumilla Board",
+                "refYear": "2023"
+            },
+            "Jessore Board 2022": {
+                "refShortName": "JB",
+                "refBoardName": "Jessore Board",
+                "refYear": "2022"
+            },
+            "Jessore Board 2023": {
+                "refShortName": "JB",
+                "refBoardName": "Jessore Board",
+                "refYear": "2023"
+            },
+            "Sylhet Board 2022": {
+                "refShortName": "SB",
+                "refBoardName": "Sylhet Board",
+                "refYear": "2022"
+            },
+            "Sylhet Board 2023": {
+                "refShortName": "SB",
+                "refBoardName": "Sylhet Board",
+                "refYear": "2023"
+            },
+            "Barisal Board 2022": {
+                "refShortName": "BB",
+                "refBoardName": "Barisal Board",
+                "refYear": "2022"
+            },
+            "Barisal Board 2023": {
+                "refShortName": "BB",
+                "refBoardName": "Barisal Board",
+                "refYear": "2023"
+            },
+            "Dinajpur Board 2022": {
+                "refShortName": "DB",
+                "refBoardName": "Dinajpur Board",
+                "refYear": "2022"
+            },
+            "Dinajpur Board 2023": {
+                "refShortName": "DB",
+                "refBoardName": "Dinajpur Board",
+                "refYear": "2023"
+            },
+            "Mymensingh Board 2022": {
+                "refShortName": "MsB",
+                "refBoardName": "Mymensingh Board",
+                "refYear": "2022"
+            },
+            "Mymensingh Board 2023": {
+                "refShortName": "MsB",
+                "refBoardName": "Mymensingh Board",
+                "refYear": "2023"
+            },
+            "Madrasah Board 2022": {
+                "refShortName": "MB",
+                "refBoardName": "Madrasah Board",
+                "refYear": "2022"
+            },
+            "Madrasah Board 2023": {
+                "refShortName": "MB",
+                "refBoardName": "Madrasah Board",
+                "refYear": "2023"
+            }
+        }
+
+        let slctdBoardRef = [];
+
+        for (const key in boardRefObject) {
+            document.getElementById("reffilHolder").innerHTML += `<button id="chip" onclick="addtoslctdArray(this.innerHTML)" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">${key}</button>`;
+        }
+
+
+        function addtoslctdArray(btntext) {
+            slctdBoardRef.push(boardRefObject[btntext]);
+
+            let temp = ''; 
+            for (let i = 0; i < slctdBoardRef.length; i++) {
+                console.log(slctdBoardRef[i]);
+
+                temp += `<span id="" class="inline-flex items-center px-2 py-1 m-1 text-xs font-medium text-slate-800 bg-green-400 rounded dark:bg-green-900 dark:text-green-300"> ${slctdBoardRef[i].refBoardName} ${slctdBoardRef[i].refYear} <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-slate-800 bg-transparent rounded-sm hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300"> <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" /> </svg> </button> </span>`;
+                // `${slctdBoardRef[i].refBoardName} ${slctdBoardRef[i].refYear}`;
+                
+            }
+
+            document.getElementById('slctdBoardRefHolder').innerHTML = temp;
+        }
+
+
         function filterFunction() {
             const input = document.getElementById("boardRef");
             const filter = input.value.toUpperCase();
             const div = document.getElementById("reffilHolder");
             const a = div.getElementsByTagName("button");
             for (let i = 0; i < a.length; i++) {
-              txtValue = a[i].textContent || a[i].innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                a[i].style.display = "";
-              } else {
-                a[i].style.display = "none";
-              }
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
             }
-          }
+        }
     </script>
 </body>
 
