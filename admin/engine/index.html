@@ -444,7 +444,7 @@
                 const filteredArray = Object.keys(boardRefObject).filter(key =>
                         key.includes(input))
                         .reduce((obj, key) => {
-                            obj[key] = boardRefObject[key];
+                            obj[key] = boardRefObject[key].toLowerCase();
                             return obj;
                         }, {});
                 for (const key in filteredArray) {
