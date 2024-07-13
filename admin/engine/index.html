@@ -408,10 +408,10 @@
 
 
         function addtoslctdArray(btntext) {
-            slctdBoardRef.push(boardRefObject[btntext]);
+            slctdBoardRef.push(boardRefObject[btntext].toLowerCase());
 
             console.log(slctdBoardRef);
-            
+
             let temp = ''; 
             for (let i = 0; i < slctdBoardRef.length; i++) {
                 console.log(slctdBoardRef[i]);
