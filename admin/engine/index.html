@@ -200,7 +200,7 @@
 
 
                                     </div>
-                                    <input type="text" id="boardRef" onkeyup="filterFunction()"
+                                    <input type="text" id="boardRef" oninput="filterFunction()"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Type to search" required />
 
@@ -298,102 +298,102 @@
     <script>
 
         let boardRefObject = {
-            "Dhaka Board 2022": {
+            "dhaka board 2022": {
                 "refShortName": "DB",
                 "refBoardName": "Dhaka Board",
                 "refYear": "2022"
             },
-            "Dhaka Board 2023": {
+            "dhaka board 2023": {
                 "refShortName": "DB",
                 "refBoardName": "Dhaka Board",
                 "refYear": "2023"
             },
-            "Chittagong Board 2022": {
+            "chittagong board 2022": {
                 "refShortName": "CB",
                 "refBoardName": "Chittagong Board",
                 "refYear": "2022"
             },
-            "Chittagong Board 2023": {
+            "chittagong board 2023": {
                 "refShortName": "CB",
                 "refBoardName": "Chittagong Board",
                 "refYear": "2023"
             },
-            "Rajshahi Board 2022": {
+            "rajshahi board 2022": {
                 "refShortName": "RB",
                 "refBoardName": "Rajshahi Board",
                 "refYear": "2022"
             },
-            "Rajshahi Board 2023": {
+            "rajshahi board 2023": {
                 "refShortName": "RB",
                 "refBoardName": "Rajshahi Board",
                 "refYear": "2023"
             },
-            "Cumilla Board 2022": {
+            "cumilla board 2022": {
                 "refShortName": "CuB",
                 "refBoardName": "Cumilla Board",
                 "refYear": "2022"
             },
-            "Cumilla Board 2023": {
+            "cumilla board 2023": {
                 "refShortName": "CuB",
                 "refBoardName": "Cumilla Board",
                 "refYear": "2023"
             },
-            "Jessore Board 2022": {
+            "jessore board 2022": {
                 "refShortName": "JB",
                 "refBoardName": "Jessore Board",
                 "refYear": "2022"
             },
-            "Jessore Board 2023": {
+            "jessore board 2023": {
                 "refShortName": "JB",
                 "refBoardName": "Jessore Board",
                 "refYear": "2023"
             },
-            "Sylhet Board 2022": {
+            "sylhet board 2022": {
                 "refShortName": "SB",
                 "refBoardName": "Sylhet Board",
                 "refYear": "2022"
             },
-            "Sylhet Board 2023": {
+            "sylhet board 2023": {
                 "refShortName": "SB",
                 "refBoardName": "Sylhet Board",
                 "refYear": "2023"
             },
-            "Barisal Board 2022": {
+            "barisal board 2022": {
                 "refShortName": "BB",
                 "refBoardName": "Barisal Board",
                 "refYear": "2022"
             },
-            "Barisal Board 2023": {
+            "barisal board 2023": {
                 "refShortName": "BB",
                 "refBoardName": "Barisal Board",
                 "refYear": "2023"
             },
-            "Dinajpur Board 2022": {
+            "dinajpur board 2022": {
                 "refShortName": "DB",
                 "refBoardName": "Dinajpur Board",
                 "refYear": "2022"
             },
-            "Dinajpur Board 2023": {
+            "dinajpur board 2023": {
                 "refShortName": "DB",
                 "refBoardName": "Dinajpur Board",
                 "refYear": "2023"
             },
-            "Mymensingh Board 2022": {
+            "mymensingh board 2022": {
                 "refShortName": "MsB",
                 "refBoardName": "Mymensingh Board",
                 "refYear": "2022"
             },
-            "Mymensingh Board 2023": {
+            "mymensingh board 2023": {
                 "refShortName": "MsB",
                 "refBoardName": "Mymensingh Board",
                 "refYear": "2023"
             },
-            "Madrasah Board 2022": {
+            "madrasah board 2022": {
                 "refShortName": "MB",
                 "refBoardName": "Madrasah Board",
                 "refYear": "2022"
             },
-            "Madrasah Board 2023": {
+            "madrasah board 2023": {
                 "refShortName": "MB",
                 "refBoardName": "Madrasah Board",
                 "refYear": "2023"
@@ -402,9 +402,9 @@
 
         let slctdBoardRef = [];
 
-        for (const key in boardRefObject) {
-            document.getElementById("reffilHolder").innerHTML += `<button id="chip" onclick="addtoslctdArray(this.innerHTML)" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">${key}</button>`;
-        }
+        // for (const key in boardRefObject) {
+        //     document.getElementById("reffilHolder").innerHTML += `<button id="chip" onclick="addtoslctdArray(this.innerHTML)" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">${key}</button>`;
+        // }
 
 
         function addtoslctdArray(btntext) {
@@ -424,17 +424,35 @@
 
 
         function filterFunction() {
-            const input = document.getElementById("boardRef");
-            const filter = input.value.toUpperCase();
-            const div = document.getElementById("reffilHolder");
-            const a = div.getElementsByTagName("button");
-            for (let i = 0; i < a.length; i++) {
-                txtValue = a[i].textContent || a[i].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    a[i].style.display = "";
-                } else {
-                    a[i].style.display = "none";
+            // const input = document.getElementById("boardRef");
+            // const filter = input.value.toUpperCase();
+            // const div = document.getElementById("reffilHolder");
+            // const a = div.getElementsByTagName("button");
+            // for (let i = 0; i < a.length; i++) {
+            //     txtValue = a[i].textContent || a[i].innerText;
+            //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            //         a[i].style.display = "";
+            //     } else {
+            //         a[i].style.display = "none";
+            //     }
+            // }
+            const input = document.getElementById("boardRef").value.toLowerCase();
+            const boardRefHolder = document.getElementById("reffilHolder");
+            boardRefHolder.innerHTML = '';
+
+            if (input.trim() !== '') {
+                const filteredArray = Object.keys(boardRefObject).filter(key =>
+                        key.includes(input))
+                        .reduce((obj, key) => {
+                            obj[key] = boardRefObject[key];
+                            return obj;
+                        }, {});
+                for (const key in filteredArray) {
+                    document.getElementById("reffilHolder").innerHTML += `<button id="chip" onclick="addtoslctdArray(this.innerHTML)" class="relative m-1 grid select-none items-center whitespace-nowrap rounded bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">${key}</button>`;
                 }
+                
+            } else {
+                
             }
         }
     </script>
